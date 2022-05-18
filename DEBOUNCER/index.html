@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="text-align:center ;" >
+<button style="height: 40px; width: 100px; font-size:20px; margin: auto;"  id="click">Click Me </button>
+
+</body>
+</html>
+<script >
+
+	var button = document.getElementById("click") ;
+	const debounce = (func, delay) => {
+
+		let debounceTimer
+		
+		return function() {
+			const context = this
+			const args = arguments
+				clearTimeout(debounceTimer)
+					debounceTimer
+				= setTimeout(() => func.apply(context, args), delay)
+		}
+	}
+
+	button.addEventListener('click', debounce(function() {
+			alert(" Hey, I am clicked after 2 seconds  ")
+							},2000));
+
+</script> 
+
