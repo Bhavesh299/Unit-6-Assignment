@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMGOR</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="Sidebar"></div> 
+    <div id="maindiv"></div>
+</body>
+</html>
+<script  type = "module">
+
+ import sidebar from "./sidebar.js" ;
+ 
+  let sidebar_div = document.getElementById("Sidebar") ;
+  sidebar_div.innerHTML = sidebar() ; 
+import { appendCall } from "./scripts/main.js" ; 
+let maindiv = document.getElementById("maindiv") ;
+let value = JSON.parse(localStorage.getItem("clicked-item")) ;
+var arr = [];
+arr.push(value) ;
+appendCall(arr,parent) ; 
+
+</script>

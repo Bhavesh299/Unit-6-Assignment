@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+    <div id="container"></div>
+    <div id="sidebar"></div>
+      <div class="container">
+        <div id="Body">
+            <h1>IMGUR</h1>
+        </div>
+        <div id="main"></div>
+      </div>
+    </div>
+  </body>
+</html>
+<script type = "module">
+
+import sidebar from "./sidebar.js"
+let sidebar_div = document.getElementById("sidebar");
+sidebar_div.innerHTML = sidebar()
+
+import { makeapiCall , appendCall } from "./scripts/search.html";
+
+let api = "ulFoUx0wOJZ5CyBKYqzjT8dMIZQo5qSO9qeSPcEV5nI"
+let res = await makeapiCall(`https://api.unsplash.com/photos/?client_id=${api}`)
+
+let value = document.getElementById("main");
+
+appendCall(res,value)
+
+let search_value = document.getElementById("search");
+search_value.addEventListener("keypress", (e)=>{
+  if(e.key === "Enter"){
+    let input = document.getElementById("search").value ;
+    localStorage.setItem("search_term",input)
+    window.location.href= "search.html" 
+  }
+
+})
+var count = 1 ;
+
+let imageDiv = document.getElementById("imageDiv");
+
+function getData() {
+  count++ ; 
+
+  fetchData(count);
+}
+fetchData(count);
+
+async function fetchData(count) {
+  const api = `https://picsum.photos/v2/list?limit=15&page=${count}`;
+  let res = await fetch(api);
+  let data = await res.json();
+  
+  console.log("data:", data);
+  data.forEach(({download_url}) => {
+    let div = document.createElement("div");
+    div.setAttribute("class", "flex col-auto");
+    div.innerHTML = `<div
+            class="
+              container
+              bg-white
+              shadow-lg
+              transform
+              transition
+              duration-400
+              ease-in-out
+              hover:scale-105
+              hover:shadow-lg
+              h-max
+            "
+          >
+            <img
+              class="cursor-pointer"
+              src=${download_url}
+              alt="image not found"
+              height=Math.random() * 200 + 100;
+              width=Math.random() * 200 + 100;
+            />
+          </div>`;
+    imageDiv.append(div);
+  });
+}
+
+
+
+
+window.addEventListener("scroll", () => {
+  
+  const { scrollHeight, scrollTop, clientHeight } = document.documentElement || document.body ; 
+
+  if (scrollTop + clientHeight >= scrollHeight) {
+    getData() ; 
+  }
+});
+
+
+
+</script>
