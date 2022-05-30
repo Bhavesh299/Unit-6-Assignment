@@ -1,0 +1,254 @@
+
+1. :- How to add comments on css?
+Ans:- A CSS comment is placed inside the <style> element, and starts with "/*" and ends with "*/".
+      Ex :- <style> 
+               /* This is a comment section */
+	        
+                p {
+                    color: red;
+                  }
+            </style>
+
+2. :- Why do we use pseudo-class?
+Ans:- A pseudo-class is used to define a special state of an element.
+      Ex :- 
+        Style an element when a user mouses over it.
+        Style visited and unvisited links differently.
+        Style an element when it gets focus.
+
+3. :- How is specificity applied?
+Ans:- If there are two or more CSS rules that point to the same element, the selector with the highest specificity value will "win", and its style declaration will be applied to that HTML element.
+      Think of specificity as a score/rank that determines which style declaration are ultimately applied to an element.
+
+4. :- What method allows an element to be moved from its current position?
+Ans:- The translate() method moves an element from its current position (according to the parameters given for the X-axis and the Y-axis).
+
+5. :- what properties does flex model have?
+Ans:- The flex CSS shorthand property is the combination of flex-grow, flex-shrink, and flex-basis property. It is used to set the length of flexible items. The flex property is much responsive and mobile-friendly. It is easy to position child elements and the main container. The margin doesn’t collapse with the content margins. The order of any element can be easily changed without editing the HTML section.
+      Flex-grow Property: A number that specifies, how much items will grow relative to the rest of the flexible items.
+      Flex-shrink Property: A number that specifies, how much items will shrink relative to the rest of the flexible items.
+      Flex-basis Property: It sets the length of items. Legal values of flex-basis are: auto, inherit, or a number followed by %, em, px, or any other length unit.
+      Flex-wrap Property: The CSS flex-wrap property is used to specify whether flex items are forced into a single line or wrapped onto multiple lines.
+
+6. :- What is the difference between flex and grids?
+Ans :- Flexbox: The CSS Flexbox offers a one-dimensional layout. It is helpful in allocating and aligning the space among items in a container (made of grids). It works with all kinds of display devices and screen sizes.
+       To get started you have to define a container element as a grid with "display: flex;".
+
+       Grid: CSS Grid Layout, is a two-dimensional grid-based layout system with rows and columns, making it easier to design web pages without having to use floats and positioning. Like tables, grid layout allow us to align elements into columns and rows.
+       To get started you have to define a container element as a grid with display: grid, set the column and row sizes with grid-template-columns and grid-template-rows, and then place its child elements into the grid with grid-column and grid-row.
+
+7. :- Give an example where we have to use grids and where you have to use flexbox?
+Ans:- If you are using flexbox and find yourself disabling some of the flexibility, you probably need to use CSS Grid Layout. An example would be if you are setting a percentage width on a flex item to make it line up with other items in a row above. In that case, a grid is likely to be a better choice.
+
+8. :- Give an example where you cannot use flexbox, and you can only use grids?
+Ans:-Grid Ex:-  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .main{
+              
+            display: grid;
+            display: grid; 
+            grid: auto auto / auto auto auto auto; 
+            grid-gap: 10px; 
+            background-color: green; 
+            padding: 10px; 
+        }
+        .gfg { 
+            background-color: rgb(255, 255, 255); 
+            text-align: center; 
+            padding: 25px 0; 
+            font-size: 30px; 
+        } 
+    </style>
+</head>
+<body>
+    <h2 style="text-align: center;">Bhavesh Chavhan</h2>
+    <div class="main">
+        <div class="gfg">Home</div>
+        <div class="gfg">Read</div>
+        <div class="gfg">Write</div>
+        <div class="gfg">About Us</div>
+        <div class="gfg">Contact Us</div>
+        <div class="gfg">Privacy Policy</div>
+    </div>
+</body>
+</html>
+      
+      Flexbox Ex :-  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .main{
+              
+            display: flex;
+            display: flex; 
+            grid: auto auto / auto auto auto auto; 
+            grid-gap: 10px; 
+            background-color: green; 
+            padding: 10px; 
+        }
+        .gfg { 
+            background-color: rgb(255, 255, 255); 
+            text-align: center; 
+            padding: 25px 0; 
+            font-size: 30px; 
+        } 
+    </style>
+</head>
+<body>
+    <h2 style="text-align: center;">Bhavesh Chavhan </h2>
+    <div class="main">
+        <div class="gfg">Home</div>
+        <div class="gfg">Read</div>
+        <div class="gfg">Write</div>
+        <div class="gfg">About Us</div>
+        <div class="gfg">Contact Us</div>
+        <div class="gfg">Privacy Policy</div>
+    </div>
+</body>
+</html>
+
+9. :- What are combinators? give examples of how you can use them?
+Ans:- A combinator is something that explains the relationship between the selectors.
+      There are four different combinators in CSS:
+      descendant selector (space)
+      child selector (>)
+      adjacent sibling selector (+)
+      general sibling selector (~)
+
+      1. Descendant Selector
+         The descendant selector matches all elements that are descendants of a specified element.
+
+         The following example selects all <p> elements inside <div> elements: 
+
+         Ex.
+         div p {
+             background-color: yellow;
+            }
+      2. Child Selector (>)
+         The child selector selects all elements that are the children of a specified element.
+
+         The following example selects all <p> elements that are children of a <div> element:
+
+         Ex.
+         div > p {
+             background-color: yellow;
+          }
+      3. Adjacent Sibling Selector (+)
+         The adjacent sibling selector is used to select an element that is directly after another specific element.
+         Sibling elements must have the same parent element, and "adjacent" means "immediately following".
+
+         The following example selects the first <p> element that are placed immediately after <div> elements:
+
+         Ex.
+         div + p {
+            background-color: yellow;
+          }
+       4. General Sibling Selector (~)
+          The general sibling selector selects all elements that are next siblings of a specified element.
+
+          The following example selects all <p> elements that are next siblings of <div> elements: 
+
+          Ex.
+          div ~ p {
+             background-color: yellow;
+           }
+
+10. :- What does object-fit do?
+Ans :- The object-fit property is used to specify how an <img> or <video> should be resized to fit its container.
+       This property tells the content to fill the container in a variety of ways; such as "preserve that aspect ratio" or "stretch up and take up as much space as possible".
+       
+11. :- What does rotate do?
+Ans :- The rotate() CSS function defines a transformation that rotates an element around a fixed point on the 2D plane, without deforming it. Its result is a <transform-function> data type.
+
+
+12. :- What rule can be used to define animations 
+Ans :- he @keyframes rule specifies the animation code.
+       The animation is created by gradually changing from one set of CSS styles to another.
+       During the animation, you can change the set of CSS styles many times.
+       Specify when the style change will happen in percent, or with the keywords "from" and "to", which is the same as 0% and 100%. 0% is the beginning of the animation, 100% is when the animation is complete.
+
+13. :- When working with attribute selectors, how can you select elements which contain a particular attribute value?
+Ans :- The [attribute|="value"] selector is used to select elements with the specified attribute, whose value can be exactly the specified value, or the specified value followed by a hyphen (-). 
+       a[href*="en-US"] // selects an `a` tag which a particular href attribute value that has been asked.
+
+14. :- What does @media do?
+Ans :- The @media rule is used in media queries to apply different styles for different media types/devices.
+       Media queries can be used to check many things, such as:
+        1.width and height of the viewport
+        2.width and height of the device
+        3.orientation (is the tablet/phone in landscape or portrait mode?)
+        4.resolution
+       Using media queries are a popular technique for delivering a tailored style sheet (responsive web design) to desktops, laptops, tablets, and mobile phones.
+       You can also use media queries to specify that certain styles are only for printed documents or for screen readers (mediatype: print, screen, or speech).
+       In addition to media types, there are also media features. Media features provide more specific details to media queries, by allowing to test for a specific feature of the user agent or display device. For example, you can apply styles to only those screens that are greater, or smaller, than a certain width.
+
+15. :- What can be used to override properties of an element
+Ans :- To override the CSS properties of a class using another class, we can use the !important directive. In CSS, !important means “this is important”, and the property:value pair that has this directive is always applied even if the other element has higher specificity.
+       Syntex :- 
+           element1 {
+                property-x: value_y  !important; /* This will be applied. */
+           }
+           element2 {
+                property-x: value_z; /* This will not be applied. */
+           }
+
+16. :- How can you select every alternate elements in a list of elements using css?
+Ans :- Syntax :
+
+          HTML
+
+               <ul>
+                  <li>1</li>
+                  <li>2</li>
+                  <li>3</li>
+                  <li>4</li>
+                  <li>5</li>
+                  <li>6</li>
+                  <li>7</li>
+                  <li>8</li>
+                  <li>9</li>
+                  <li>10</li>
+              </ul>
+
+           CSS
+
+              ul{
+                  list-style-type: none;
+                  color: white;
+               }
+              li:nth-of-type(odd){ // or you can also use li:nth-child(odd)
+                  background-color:blue;
+               }
+              li:nth-of-type(even){
+                  background-color:red;
+               }
+
+17. :- What is the ranking of selectors with respect to specificity
+Ans :- Every selector has its place in the specificity hierarchy. If two selectors apply to the same element, the one with higher specificity wins. There are four distinct categories which define the specificity level of a given selector: inline styles, IDs, classes, attributes, and elements.
+
+
+18. :- how can we apply same styles to multiple selectors?
+Ans :- When you group CSS selectors, you apply the same styles to several different elements without repeating the styles in your stylesheet. Instead of having two, three, or more CSS rules that do the same thing (set the color of something to red, for example), you use a single CSS rule that accomplishes the same thing.
+
+19. :- What are the differences between relative and absolute in CSS?
+Ans :- Relative Position: Setting the top, right, bottom, and left properties of an element with position: relative; property will cause it to adjust from its normal position. The other objects or elements will not fill the gap.
+        Syntax:
+            position: relative ;
+       Absolute Position: An element with position: absolute; will cause it to adjust its position with respect to its parent. If no parent is present, then it uses the document body as parent.
+        Syntax:
+            position: absolute ;
+ 
+
+
+
+
+
+
+
+
+
+
+
+
